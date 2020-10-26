@@ -12,24 +12,18 @@ private:
 	void UpdateEnemy();
 	int randDefNum;
 	int randAttackNum;
-	bool isAtPlayer;
 	int randMove;
+	string attack;
+	
 	unsigned int lastTime = 0, currentTime;
-	GameManager health;
-	int dmgToReceive = 0;
-
-	int attackType=0;
 
 public:
 	Enemy(SDL_Texture* tex, double x, double y);
 	~Enemy();
-	int GetAttack() { return attackType; }
 	void Update() override;
 	void Render();
 	void Attack();
-	void ReRoll();
-	int GetRng();
-	void Move();
 	void Defend();
-	void TakeHit();
+	void Move();
+	void SetCanAttack(bool atk) { canAttack = atk; }
 };

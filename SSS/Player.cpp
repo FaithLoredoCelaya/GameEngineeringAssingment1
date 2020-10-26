@@ -108,17 +108,26 @@ void Player::UpdatePlayer()
     else if (Game::Instance()->KeyDown(SDL_SCANCODE_P))
     {
         PlayState("Punch");
+        this->SetAttack("Punch");
     }
     else if (Game::Instance()->KeyDown(SDL_SCANCODE_K))
     {
         PlayState("Kick");
+        this->SetAttack("Kick");
     }
     else if (Game::Instance()->KeyDown(SDL_SCANCODE_R))
     {
         PlayState("Roundhouse");
+        this->SetAttack("Roundhouse");
+    }
+    else if (Game::Instance()->KeyDown(SDL_SCANCODE_H))
+    {
+        PlayState("Hadouken");
+        this->SetAttack("Hadouken");
     }
     else {
         PlayState("Idle");
+        cout << this->gm.GetHP() << endl;
     }
 
     if (currentState == "Jump")

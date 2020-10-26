@@ -1,0 +1,20 @@
+﻿  Button.cpp
+  Enemy.cpp
+  Game.cpp
+  GameLevel1.cpp
+  GameLevel2.cpp
+  GameLevel3.cpp
+  GameState.cpp
+  Hadouken.cpp
+  LevelSelectState.cpp
+  main.cpp
+  MainMenuState.cpp
+  PauseMenuPopupState.cpp
+  Player.cpp
+  ScreenState.cpp
+  ScreenState.h
+  SpriteEx.cpp
+  StateMachine.cpp
+  Generating Code...
+x64\Debug\ScreenState.obj : warning LNK4042: object specified more than once; extras ignored
+  SSS.vcxproj -> C:\Users\Nikhil\source\repos\SSS_24335_Completed_Week2.2\x64\Debug\SSS.exe

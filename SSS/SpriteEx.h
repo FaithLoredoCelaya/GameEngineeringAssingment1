@@ -3,6 +3,7 @@
 #include <iostream>
 #include <map>
 #include <functional>
+#include "GameManager.h"
 //this base class will render just one static sprite
 using namespace std;
 class SpriteEx
@@ -22,6 +23,8 @@ protected:
     bool collision;
     bool canAttack;
     double attackRange;
+    std::string attack;
+    GameManager gm;
 
 
 public:
@@ -37,9 +40,17 @@ public:
     double GetRadius() { return m_dRadius; }
     double GetX() { return m_X; }
     double GetY() { return m_Y; }
+
     double GetAttackRange() { return attackRange; }
     void SetCollision(bool col) { collision = col; }
-    void SetAttack(bool atk) { canAttack = atk; }
+
+    string GetAttack() { return attack; };
+    void SetAttack(std::string atk) { attack = atk; };
+
+    void TakeHit(int atkVal) { 
+        m_X += 0.8f; 
+        gm.TakeDamage(atkVal); 
+    };
 };
 
 
@@ -70,26 +81,21 @@ private:
     bool isAnimFinished = false;
 
     unsigned int _LastTick = SDL_GetTicks();
-
+    unsigned int GetLastTick() { return _LastTick; }
+    void UpdateTick() { _LastTick = SDL_GetTicks(); }
 
 
 protected:
-
     int
         //    m_iSprite = 0, //which sprite to display for animation
         //    m_iSpriteMax, //how many sprites in total for this animation
         m_iFrame = 0, //which frame we are at now
         m_iFrameMax; //number of frames for this sprite
 
-
     //Store Various Animation States For This Spritesheet
     std::map<std::string, AnimStateDefinition> animStates;
 
     std::string currentState;
-
-    unsigned int GetLastTick() { return _LastTick; }
-    void UpdateTick() { _LastTick = SDL_GetTicks(); }
-
 
 public:
     void AddAnimState(std::string stateName, AnimStateDefinition asd);

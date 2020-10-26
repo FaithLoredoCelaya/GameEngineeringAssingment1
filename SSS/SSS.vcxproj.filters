@@ -31,9 +31,6 @@
     <ClCompile Include="Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GameManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="GameState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -53,9 +50,6 @@
       <Filter>Levels</Filter>
     </ClCompile>
     <ClCompile Include="Hadouken.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="EndGameState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -103,9 +97,6 @@
       <Filter>Levels</Filter>
     </ClInclude>
     <ClInclude Include="Hadouken.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="EndGameState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

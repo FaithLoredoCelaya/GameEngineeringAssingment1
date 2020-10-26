@@ -3,13 +3,14 @@
 class GameManager
 {
 private:
-	int hitPoints;
-	int score;
+	int hp = 100;
+	int score = 0;
+
 public:
-	GameManager() { hitPoints = 100; score = 0; }
-	int GetHP() { return hitPoints; }
-	void TakeDamage(int dmg);
+	GameManager() { }
+	int GetHP() { return hp; }
+	void TakeDamage(int dmg) { hp -= dmg; };
 	int GetScore() { return score; }
-	void SetScore(int nscore);
+	void SetScore(int nscore) { score += nscore; };
 };
 

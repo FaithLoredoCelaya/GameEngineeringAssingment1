@@ -91,26 +91,21 @@ void GameState::CheckAttackRange()
 		(enemy->GetX() + enemy->GetAttackRange()), (enemy->GetY() + enemy->GetAttackRange()), //need to add in radius to get center of rendered image for proper midpoint value
 		player->GetAttackRange(), enemy->GetAttackRange()))
 	{
-		enemy->SetAttack(true);
-		
-		if (enemy->GetAttack() == 1)
-		{
-			
+		enemy->SetCanAttack(true);
+		if (enemy->GetAttack() == "Punch") {
+			player->TakeHit(5);
 		}
-		if (enemy->GetAttack() == 2)
-		{
-
+		if (enemy->GetAttack() == "Kick") {
+			player->TakeHit(10);
 		}
-		if (enemy->GetAttack() == 3)
-		{
-
+		if (enemy->GetAttack() == "Roundhouse") {
+			player->TakeHit(15);
 		}
-		if (enemy->GetAttack() == 4)
-		{
-
+		if (enemy->GetAttack() == "Hadouken") {
+			player->TakeHit(30);
 		}
 	}
 	else {
-		enemy->SetAttack(false);
+		enemy->SetCanAttack(false);
 	}
 }
