@@ -33,6 +33,29 @@ Player::Player(SDL_Texture* tex, double x, double y)
     animStates["Jump"].AddCallBackOnComplete(std::bind(&Player::OnJumpAnimComplete, this));
 }
 
+void Player::TakeHit(int dmgToReceive)
+{
+    if (dmgToReceive == 1)
+    {
+        health.TakeDamage(5);
+    }
+    else if (dmgToReceive == 2)
+    {
+        health.TakeDamage(10);
+    }
+    else if (dmgToReceive == 3)
+    {
+        health.TakeDamage(15);
+    }
+    else if (dmgToReceive == 4)
+    {
+        health.TakeDamage(30);
+    }
+    m_X += 0.1f;
+    cout << "Player Health" << health.GetHP() << "\n";
+}
+
+
 Player::~Player()
 {
 
@@ -107,14 +130,17 @@ void Player::UpdatePlayer()
     }
     else if (Game::Instance()->KeyDown(SDL_SCANCODE_P))
     {
+        attackType = 1;
         PlayState("Punch");
     }
     else if (Game::Instance()->KeyDown(SDL_SCANCODE_K))
     {
+        attackType = 2;
         PlayState("Kick");
     }
     else if (Game::Instance()->KeyDown(SDL_SCANCODE_R))
     {
+        attackType = 3;
         PlayState("Roundhouse");
     }
     else {

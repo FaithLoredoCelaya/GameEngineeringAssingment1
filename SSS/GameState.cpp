@@ -95,19 +95,19 @@ void GameState::CheckAttackRange()
 		
 		if (enemy->GetAttack() == 1)
 		{
-			
+			player->TakeHit(1);
 		}
 		if (enemy->GetAttack() == 2)
 		{
-
+			player->TakeHit(2);
 		}
 		if (enemy->GetAttack() == 3)
 		{
-
+			player->TakeHit(3);
 		}
 		if (enemy->GetAttack() == 4)
 		{
-
+			player->TakeHit(4);
 		}
 	}
 	else {

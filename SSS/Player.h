@@ -2,6 +2,8 @@
 #include "SpriteEx.h"
 #include <vector>
 #include <functional>
+#include "GameManager.h"
+
 using namespace std;
 class Player : public SpriteExAnimated
 {
@@ -10,6 +12,12 @@ private:
 		m_velY = 0,
 		preJumpYVal=0,
 		m_velMax = 10;
+
+	GameManager health;
+
+	int attackType = 0;
+
+
 	void MovePlayer(bool isFwd);
 	void UpdatePlayer();
 public:
@@ -22,5 +30,5 @@ public:
 	//void SetIdle();
 	virtual void Jump();
 	void OnJumpAnimComplete();
-
+	void TakeHit(int dmgToReceive);
 };
